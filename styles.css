@@ -73,6 +73,35 @@ button:disabled {
   box-shadow: 0 10px 20px rgba(35, 46, 110, 0.08);
 }
 
+.guide {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 20px rgba(35, 46, 110, 0.08);
+}
+
+.guide__avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 18px;
+  background: #f1f4ff;
+  display: grid;
+  place-items: center;
+  border: 2px solid #c9d1ff;
+}
+
+.guide__avatar svg {
+  width: 90px;
+  height: 90px;
+}
+
+.guide__text h2 {
+  margin: 0 0 6px;
+}
+
 .stage {
   position: relative;
   display: grid;
