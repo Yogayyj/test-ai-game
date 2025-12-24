@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reference Rescue: Java References MVP</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <div>
+        <h1>Reference Rescue</h1>
+        <p>Run each line to see how Java references move and mutate objects.</p>
+      </div>
+      <div class="controls">
+        <button id="runLineBtn" class="primary">Run next line</button>
+        <button id="resetLevelBtn" class="ghost">Reset level</button>
+        <button id="nextLevelBtn" class="ghost" disabled>Next level</button>
+      </div>
+    </header>
+
+    <section class="level" id="levelInfo"></section>
+
+    <section class="stage" aria-label="Reference diagram">
+      <div class="column">
+        <h2>Variables</h2>
+        <div id="variables" class="stack"></div>
+      </div>
+      <div class="column">
+        <h2>Objects</h2>
+        <div id="objects" class="stack"></div>
+      </div>
+      <svg id="arrows" class="arrows" aria-hidden="true"></svg>
+    </section>
+
+    <section class="code">
+      <h2>Java lines</h2>
+      <ol id="codeLines" class="code__lines"></ol>
+    </section>
+
+    <section class="question" id="questionPanel">
+      <h2>Check for understanding</h2>
+      <p id="questionText">Press “Run next line” to start.</p>
+      <div id="choices" class="choices"></div>
+      <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
