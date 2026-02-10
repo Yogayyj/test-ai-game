@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reference Rescue: Java References MVP</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <div>
+        <h1>Reference Rescue</h1>
+        <p>Run each line to see how Java references move and mutate objects.</p>
+      </div>
+      <div class="controls">
+        <button id="runLineBtn" class="primary">Run next line</button>
+        <button id="resetLevelBtn" class="ghost">Reset level</button>
+        <button id="nextLevelBtn" class="ghost" disabled>Next level</button>
+      </div>
+    </header>
+
+    <section class="level" id="levelInfo"></section>
+    <section class="guide">
+      <div class="guide__avatar" aria-hidden="true">
+        <svg viewBox="0 0 120 120" role="img" aria-label="Student avatar">
+          <defs>
+            <linearGradient id="shirt" x1="0" x2="1">
+              <stop offset="0%" stop-color="#5b8cff" />
+              <stop offset="100%" stop-color="#2f54eb" />
+            </linearGradient>
+          </defs>
+          <circle cx="60" cy="38" r="22" fill="#ffd7b5" />
+          <path d="M38 38c4-12 14-20 22-20 10 0 20 8 24 20" fill="#3b2d2a" />
+          <circle cx="52" cy="38" r="3" fill="#2f2f3a" />
+          <circle cx="68" cy="38" r="3" fill="#2f2f3a" />
+          <path d="M52 50c4 4 12 4 16 0" stroke="#2f2f3a" stroke-width="3" fill="none" stroke-linecap="round" />
+          <path d="M25 98c6-18 18-28 35-28h0c17 0 29 10 35 28" fill="url(#shirt)" />
+          <path d="M36 80c6 8 16 12 24 12s18-4 24-12" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" />
+        </svg>
+      </div>
+      <div class="guide__text">
+        <h2>Your Guide</h2>
+        <p>Follow along with the animated student avatar as you trace references line by line.</p>
+      </div>
+    </section>
+
+    <section class="stage" aria-label="Reference diagram">
+      <div class="column">
+        <h2>Variables</h2>
+        <div id="variables" class="stack"></div>
+      </div>
+      <div class="column">
+        <h2>Objects</h2>
+        <div id="objects" class="stack"></div>
+      </div>
+      <svg id="arrows" class="arrows" aria-hidden="true"></svg>
+    </section>
+
+    <section class="code">
+      <h2>Java lines</h2>
+      <ol id="codeLines" class="code__lines"></ol>
+    </section>
+
+    <section class="question" id="questionPanel">
+      <h2>Check for understanding</h2>
+      <p id="questionText">Press “Run next line” to start.</p>
+      <div id="choices" class="choices"></div>
+      <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
